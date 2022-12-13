@@ -1,17 +1,19 @@
 # 不要直接运行
 
 # install
-sh <(curl https://mirrors.tuna.tsinghua.edu.cn/nix/latest/install) --daemon
+# 即使为单用户安装，也需要开启代理，并设置https_proxy等变量
+# 为多用户安装时，daemon会绕过代理的变量，无论如何都会很慢
+sh <(curl https://mirrors.tuna.tsinghua.edu.cn/nix/latest/install)
 
-echo 'substituters = https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store https://cache.nixos.org/' | sudo tee -a /etc/nix/nix.conf
-sudo systemctl restart nix-daemon.service
-sudo nix-channel --add https://mirrors.tuna.tsinghua.edu.cn/nix-channels/nixpkgs-unstable nixpkgs
-sudo nix-channel --update
+mkdir -p ~/.config/nix
+echo 'substituters = https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store https://cache.nixos.org/' | tee ~/.config/nix/nix.conf
+# 如果出现域名无法解析的问题，那检查一下/etc/resolv.conf有没有正确链接
+nix-channel --add https://mirrors.tuna.tsinghua.edu.cn/nix-channels/nixpkgs-unstable nixpkgs
+nix-channel --update
 
-# 如果安装途中卡住，那就取消那一步，然后更新完镜像按指示补充之前的步骤。如：
-# sudo -i nix-channel --update nixpkgs
 
 # uninstall
+# 此处是为多用户安装的nix卸载方法，暂未探索单用户的卸载方法。
 sudo rm -rf /nix /etc/nix /etc/profile/nix.sh ~root/.nix-profile ~root/.nix-defexpr ~root/.nix-channels ~/.nix-profile ~/.nix-defexpr ~/.nix-channels
 
 for i in $(seq 1 32); do
