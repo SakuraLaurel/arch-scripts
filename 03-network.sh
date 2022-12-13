@@ -34,7 +34,7 @@ echo "[Match]
 Name=wlan0
 
 [Network]
-Address=192.168.1.255/24
+Address=192.168.1.251/24
 Gateway=192.168.1.1
 DNS=8.8.8.8"  | sudo tee -a /etc/systemd/network/25-wireless.network
 sudo systemctl restart systemd-networkd.service
