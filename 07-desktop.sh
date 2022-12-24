@@ -1,12 +1,14 @@
-# 不可直接运行，显卡不同则驱动不同，后续一些措施也不同
-# intel。后续可能还要安装intel-media-driver等包来开启硬件视频加速等功能
+# 不可直接运行，显卡不同则驱动不同，后续一些措施也不同。因为b站和火狐在硬解时相性不好，所以迁移到了chromium。
+
+# intel。有些地方推荐不安装x86-video-intel驱动，而是使用默认的驱动（无需安装）；我在使用中也发现KDE确实和x86-video-intel不兼容，后面给出了解决方案（退回modesetting）。但我对这个名字有好感，所以还是安装了。我用不上OpenGL，所以不装mesa。
 sudo pacman -S xf86-video-intel
 # 安装intel-gpu-tools，使用intel_gpu_top来监视显卡工作情况
-# nvidia。同样可能需要安装nvidia-utils等包
+
+# nvidia
 sudo pacman -S nvidia
 
 sudo pacman -S xorg-server plasma sddm
-sudo pacman -S dolphin firefox-i18n-zh-cn konsole wqy-microhei noto-fonts-emoji vlc feh filezilla
+sudo pacman -S dolphin chromium konsole wqy-microhei noto-fonts-emoji vlc nomacs filezilla
 sudo mkdir -p /etc/sddm.conf.d
 # 我的用户名为sakura
 echo "[Autologin]
@@ -14,6 +16,23 @@ User=sakura
 Session=plasma.desktop" | sudo tee -a  /etc/sddm.conf.d/autologin.conf
 sudo systemctl enable sddm.service
 sudo systemctl start sddm.service
+
+# 开启浏览器视频硬解
+# intel，Broadwell以及之后的核显，使用va-api
+# 检查配置使用libva-utils提供的vainfo
+sudo pacman -S intel-media-driver libva-utils
+
+# nvidia，使用vdpau
+# 检查配置使用vdpauinfo提供的vdpauinfo
+sudo pacman -S nvidia-utils vdpauinfo
+
+# chromium配置
+# 也许还需要在chrome://flags进行配置，详见arch wiki
+echo '--enable-features=VaapiVideoDecoder
+--disable-features=UseChromeOSDirectVideoDecoder' >> ~/.config/chromium-flags.conf
+
+# intel监控硬解，命令是intel_gpu_top。nvidia使用nvidia-smi就行了
+sudo pacman -S intel-gpu-tools
 
 # Intel GPU
 echo 'Section "Device"
