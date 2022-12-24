@@ -27,9 +27,8 @@ sudo pacman -S intel-media-driver libva-utils
 sudo pacman -S nvidia-utils vdpauinfo
 
 # chromium配置
-# 也许还需要在chrome://flags进行配置，详见arch wiki
-echo '--enable-features=VaapiVideoDecoder
---disable-features=UseChromeOSDirectVideoDecoder' >> ~/.config/chromium-flags.conf
+# 配置太复杂了，在我的电脑上只需要下面这一句就能硬解avc了，但无论如何都解不了av1。详见arch wiki的chromium页。
+echo '--disable-features=UseChromeOSDirectVideoDecoder' >> ~/.config/chromium-flags.conf
 
 # intel监控硬解，命令是intel_gpu_top。nvidia使用nvidia-smi就行了
 sudo pacman -S intel-gpu-tools
