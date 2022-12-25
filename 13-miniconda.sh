@@ -26,6 +26,10 @@ conda clean -i
 ## conda批量安装requirements.txt文件中包含的组件依赖
 # conda install --yes --file requirements.txt
 
+## pip换源
+## 来源：https://mirrors.pku.edu.cn/Help/Pypi
+pip install pip -U -i https://mirrors.pku.edu.cn/pypi/simple # 首先将pip版本升级至10.0.0+
+pip config set global.index-url https://mirrors.pku.edu.cn/pypi/simple
 
 ## matplotlib中文化
 # from matplotlib.font_manager import FontProperties
