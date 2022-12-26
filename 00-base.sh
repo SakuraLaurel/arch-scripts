@@ -13,3 +13,8 @@ sudo pacman -S pacman-contrib
 # 用于建立索引，使用locate快速查找文件
 sudo pacman -S mlocate
 # sudo updatedb
+
+# 今天pacman Syu的时候报错说
+# error: openssl: signature from "Pierre Schmitz <pierre@archlinux.org>" is marginal trust
+# 解决办法：
+sudo pacman -S archlinux-keyring
