@@ -3,7 +3,7 @@ m_path=~/miniconda3
 
 $m_path/bin/conda init bash
 cat ~/.bashrc >> ~/.bash_inside
-sudo sed -i "s|source ~/.bash_inside||" ~/.bash_inside
+sed -i "s|source ~/.bash_inside||" ~/.bash_inside
 $m_path/bin/conda init --reverse bash
 
 # 来源：http://mirrors.pku.edu.cn/Help/Anaconda

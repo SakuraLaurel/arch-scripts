@@ -9,5 +9,5 @@ alias clash-off="screen kill clash"' >> ~/.bash_inside
 # 如果不依赖KDE的代理，只指定chromium启动代理，则可以任选其一：
 # 1、在`~/.config/chromium-flags.conf`中添加--proxy-server=http://localhost:7890选项
 # 2、新建脚本chromium-with-proxy.sh，写入以下内容：
-#    /usr/bin/chromium --enable-features=VaapiVideoDecoder --disable-features=UseChromeOSDirectVideoDecoder --proxy-server=http://localhost:7890
-#    然后每次使用bash chromium-with-proxy.sh来启动。
+#    /usr/bin/chromium  --proxy-server=http://localhost:7890
+#    然后每次使用bash chromium-with-proxy.sh来启动。如果想同时硬解视频，需要往该脚本中添加相关的选项。
