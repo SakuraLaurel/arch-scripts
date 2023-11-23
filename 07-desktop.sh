@@ -8,7 +8,7 @@ sudo pacman -S xf86-video-intel
 sudo pacman -S nvidia
 
 sudo pacman -S xorg-server plasma sddm
-sudo pacman -S dolphin chromium konsole wqy-microhei noto-fonts-emoji vlc filezilla alsa-utils
+sudo pacman -S dolphin chromium konsole wqy-microhei noto-fonts-emoji vlc filezilla alsa-utils nomacs
 
 # 使用 alsamixer 可以解除声卡的静音：
 # $ alsamixer
