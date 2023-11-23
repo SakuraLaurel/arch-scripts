@@ -10,11 +10,11 @@ sudo pacman -S nvidia
 sudo pacman -S xorg-server plasma sddm
 sudo pacman -S dolphin chromium konsole wqy-microhei noto-fonts-emoji vlc filezilla alsa-utils
 
-> 使用 alsamixer 可以解除声卡的静音：
-> $ alsamixer
-> 声道下方标有 MM 表示其已经静音，而标有 00 表示已经启用。
-> 使用 ← 和 → 键滚动到 Master 和 PCM 声道，按下 m 键解除静音。
-> 使用 ↑ 键增加音量，获得0dB的增益。增益值可在左上方 Item: 字段旁边看到。
+# 使用 alsamixer 可以解除声卡的静音：
+# $ alsamixer
+# 声道下方标有 MM 表示其已经静音，而标有 00 表示已经启用。
+# 使用 ← 和 → 键滚动到 Master 和 PCM 声道，按下 m 键解除静音。
+# 使用 ↑ 键增加音量，获得0dB的增益。增益值可在左上方 Item: 字段旁边看到。
 
 sudo mkdir -p /etc/sddm.conf.d
 # 我的用户名为sakura
