@@ -7,6 +7,9 @@ sudo pacman -S xf86-video-intel
 # nvidia
 sudo pacman -S nvidia
 
+# AMD
+# 我在首次安装AMD显卡时，总是会在打开Chromium等时候突然卡死，于是我尝试在/etc/defaults/grub里面添加pcie_aspm=off，最后bug消失了，但不一定是由这个改动引起的。
+
 sudo pacman -S xorg-server plasma sddm
 sudo pacman -S dolphin chromium konsole wqy-microhei noto-fonts-emoji vlc filezilla alsa-utils nomacs
 
