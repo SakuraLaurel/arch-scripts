@@ -18,6 +18,8 @@ custom_channels:
     pytorch: https://mirrors.pku.edu.cn/anaconda/cloud' > ~/.condarc
 conda clean -i
 
+## 如果安装isce2等包的时候总是安不上，可以使用
+# conda install --solver libmamba
 
 ## 删除环境
 # conda remove -n 环境名 --all
