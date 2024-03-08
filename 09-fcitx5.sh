@@ -6,3 +6,6 @@ sudo pacman -S fcitx5-im fcitx5-chinese-addons fcitx5-mozc fcitx5-pinyin-zhwiki
 echo 'XMODIFIERS=@im=fcitx
 SDL_IM_MODULE=fcitx
 GLFW_IM_MODULE=ibus' | sudo tee -a /etc/environment
+
+# 对于Chromium以及其他electron软件，需要进行以下flags设置
+# --ozone-platform-hint=auto --enable-wayland-ime
