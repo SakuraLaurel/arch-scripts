@@ -25,6 +25,8 @@ sudo systemctl enable iwd.service
 sudo systemctl start iwd.service
 sudo iwctl
 # device list 查看可用设备，这里是wlan0
+# station wlan0 scan 扫描Wi-Fi
+# station wlan0 get-networks 查看可用Wi-Fi
 # 我的Mercury UD13H网卡是MT7612U，卸载之后就可以读取出来，卸载前则是可移动磁盘。
 # wifi名为NAIVE
 station wlan0 connect NAIVE
