@@ -8,4 +8,4 @@ SDL_IM_MODULE=fcitx
 GLFW_IM_MODULE=ibus' | sudo tee -a /etc/environment
 
 # 对于Chromium以及其他electron软件，需要进行以下flags设置
-# --ozone-platform=wayland --enable-wayland-ime --enable-features=UseOzonePlatform 
+# --ozone-platform=wayland --enable-wayland-ime
