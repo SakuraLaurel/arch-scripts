@@ -41,3 +41,6 @@ Gateway=192.168.1.1
 DNS=8.8.8.8"  | sudo tee -a /etc/systemd/network/25-wireless.network
 sudo systemctl restart systemd-networkd.service
 sudo systemctl restart systemd-resolved.service
+
+# 使蓝牙可用
+sudo pacman -S bluez bluez-utils
