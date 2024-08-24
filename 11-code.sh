@@ -5,6 +5,8 @@ git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si
 
+# 修改字体，可以将设置中的Editor: Font Family修改为 'Consolas', 'Consolas', monospace, 'Consolas'
+
 # 然后
 
 paru visual-studio-code-bin
