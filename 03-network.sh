@@ -44,3 +44,5 @@ sudo systemctl restart systemd-resolved.service
 
 # 使蓝牙可用
 sudo pacman -S bluez bluez-utils
+# 使一些自带驱动的windows usb网卡可以在linux上即插即用，无需挂载弹出
+sudo pacman -S usb_modeswitch
