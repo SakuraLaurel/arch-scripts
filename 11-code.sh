@@ -5,11 +5,14 @@ git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si
 
-# 修改字体，可以将设置中的Editor: Font Family修改为 'Consolas', 'Consolas', monospace, 'Consolas'
-
 # 然后
-
 paru visual-studio-code-bin
+
+# 适配wayland
+echo '--ozone-platform=wayland --enable-wayland-ime ' >> ~/.config/code-flags.conf 
+
+# 修改字体，可以将设置中的Editor: Font Family修改为 'Consolas', 'Consolas', monospace, 'Consolas'
+# 没用的话，如果安装了文泉驿字体，可以用WenQuanYi Micro Hei Mono代替monospace
 
 # sudo pacman -S lsof base-devel
 # # git clone -> makepkg -> pacman -U -> rm是AUR包基本的操作
