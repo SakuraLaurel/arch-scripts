@@ -10,8 +10,8 @@ sudo pacman -S nvidia
 # AMD
 # 我在首次安装AMD显卡时，总是会在打开Chromium等时候突然卡死，于是我尝试在/etc/defaults/grub里面添加pcie_aspm=off，最后bug消失了，但不一定是由这个改动引起的。
 
-sudo pacman -S xorg-server plasma sddm
-sudo pacman -S dolphin chromium konsole wqy-microhei noto-fonts-emoji vlc filezilla alsa-utils nomacs
+# 桌面，字体，文件管理器，终端，浏览器，音量调节，播放器，FTP软件，截屏软件，图片查看器
+sudo pacman -S plasma sddm xorg-server wqy-microhei noto-fonts-emoji dolphin konsole chromium alsa-utils vlc filezilla xfce4-screenshooter nomacs
 
 # 使用 alsamixer 可以解除声卡的静音：
 # $ alsamixer
