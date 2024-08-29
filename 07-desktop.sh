@@ -37,6 +37,8 @@ sudo pacman -S intel-media-driver libva-utils
 sudo pacman -S nvidia-utils vdpauinfo
 
 # chromium配置
+# 适配wayland
+echo '--ozone-platform=wayland --enable-wayland-ime ' >> ~/.config/chromium-flags.conf
 # 配置太复杂了，在我的电脑上只需要下面这一句就能硬解avc了，但无论如何都解不了av1。详见arch wiki的chromium页。
 echo '--disable-features=UseChromeOSDirectVideoDecoder' >> ~/.config/chromium-flags.conf
 
