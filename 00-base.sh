@@ -6,6 +6,9 @@ echo 'source ~/.bash_inside' >> ~/.bash_profile
 source ~/.bash_inside
 syu
 
+# 列出所有显式安装（-e,explicitly显式安装；-n忽略外部包AUR）
+# pacman -Qqe
+
 # 安装这个包，然后定期运行sudo paccache -r清除缓存
 sudo pacman -S pacman-contrib
 # sudo paccache -r
